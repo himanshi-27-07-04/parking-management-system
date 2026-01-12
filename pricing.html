@@ -1,0 +1,104 @@
+xml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - Smart Parking Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-section { padding: 120px 0 100px; background: #f8f9ff; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+        .plan-card { background: white; padding: 50px 30px; border-radius: 25px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.1); transition: all 0.4s ease; border-top: 5px solid #e1e8ff; position: relative; }
+        .plan-card:hover { transform: translateY(-15px); box-shadow: 0 30px 80px rgba(0,0,0,0.15); }
+        .plan-card.popular { border-top-color: #ff6b6b; transform: scale(1.05); }
+        .plan-icon { font-size: 4rem; color: #667eea; margin-bottom: 20px; }
+        .plan-price { font-size: 3.5rem; font-weight: 700; color: #1e3c72; margin: 20px 0; }
+        .plan-features { list-style: none; margin: 30px 0; }
+        .plan-features li { padding: 12px 0; display: flex; align-items: center; gap: 12px; color: #555; }
+        .plan-features li i { color: #28a745; min-width: 20px; }
+        .plan-btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 18px 40px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; }
+        .plan-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(102,126,234,0.4); }
+        @media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } .plan-card.popular { transform: none; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car"></i>
+                SmartPark
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="booking.html" class="nav-link">Book Now</a></li>
+                <li class="nav-item"><a href="pricing.html" class="nav-link active">Pricing</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pricing-section">
+        <div class="container">
+            <h1 class="section-title">Choose Your Perfect Plan <i class="fas fa-tags"></i></h1>
+            
+            <div class="pricing-grid">
+                <!-- Hourly Plan -->
+                <div class="plan-card">
+                    <div class="plan-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Hourly Parking</h3>
+                    <div class="plan-price">₹20<span style="font-size: 1.2rem; font-weight: 400;">/hour</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Flexible hourly booking</li>
+                        <li><i class="fas fa-check"></i> Instant confirmation</li>
+                        <li><i class="fas fa-check"></i> 24/7 availability</li>
+                        <li><i class="fas fa-times" style="color: #dc3545;"></i> No monthly access</li>
+                    </ul>
+                    <button class="plan-btn">Get Started</button>
+                </div>
+
+                <!-- Daily Plan (Popular) -->
+                <div class="plan-card popular">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #ff6b6b; color: white; padding: 8px 24px; border-radius: 25px; font-weight: 600; font-size: 0.9rem;">🔥 Most Popular</div>
+                    <div class="plan-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Daily Pass</h3>
+                    <div class="plan-price">₹120<span style="font-size: 1.2rem; font-weight: 400;">/day</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Full day unlimited access</li>
+                        <li><i class="fas fa-check"></i> Multiple entries</li>
+                        <li><i class="fas fa-check"></i> Priority slots</li>
+                        <li><i class="fas fa-check"></i> Instant booking</li>
+                    </ul>
+                    <button class="plan-btn">Choose Daily</button>
+                </div>
+
+                <!-- Monthly Plan -->
+                <div class="plan-card">
+                    <div class="plan-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Monthly Subscription</h3>
+                    <div class="plan-price">₹2500<span style="font-size: 1.2rem; font-weight: 400;">/month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Unlimited monthly access</li>
+                        <li><i class="fas fa-check"></i> Reserved parking spot</li>
+                        <li><i class="fas fa-check"></i> 24/7 VIP access</li>
+                        <li><i class="fas fa-check"></i> Dedicated support</li>
+                    </ul>
+                    <button class="plan-btn">Subscribe Monthly</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

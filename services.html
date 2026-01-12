@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Smart Parking Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Services Page Premium Styles */
+        .services-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(120,119,198,0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,119,198,0.2) 0%, transparent 50%);
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .services-hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.9) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .services-hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .services-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(20px);
+            color: white;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .services-cta:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .pricing-section {
+            padding: 120px 0;
+            background: #f8f9ff;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.4s ease;
+            border-top: 5px solid transparent;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+            border-top-color: #667eea;
+        }
+
+        .pricing-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            border-top-color: #ff6b6b;
+            background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+        }
+
+        .pricing-icon {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+        }
+
+        .pricing-card.car .pricing-icon { color: #667eea; }
+        .pricing-card.bike .pricing-icon { color: #ff6b6b; }
+        .pricing-card.truck .pricing-icon { color: #28a745; }
+        .pricing-card.featured .pricing-icon { color: #ff6b6b; }
+
+        .pricing-title {
+            font-size: 1.8rem;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .pricing-rate {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .pricing-features i {
+            color: #28a745;
+            font-size: 1.1rem;
+            width: 20px;
+        }
+
+        .pricing-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102,126,234,0.4);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 50px 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 5rem;
+            margin-bottom: 30px;
+        }
+
+        .service-card:nth-child(1) .service-icon { color: #667eea; }
+        .service-card:nth-child(2) .service-icon { color: #ff6b6b; }
+        .service-card:nth-child(3) .service-icon { color: #28a745; }
+        .service-card:nth-child(4) .service-icon { color: #f39c12; }
+        .service-card:nth-child(5) .service-icon { color: #9b59b6; }
+        .service-card:nth-child(6) .service-icon { color: #1abc9c; }
+
+        .service-title {
+            font-size: 1.7rem;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .features-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            .services-hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .services-hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-parking"></i>
+                <span>SmartPark Pro</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link active"><i class="fas fa-cogs"></i> Services</a></li>
+                
+                <li class="nav-item auth-item"><a href="admin.html" class="nav-link"><i class="fas fa-user-shield"></i> Admin</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="services-hero-container">
+            <div>
+                <h1 class="services-hero-title">Premium Parking Services</h1>
+                <p class="services-hero-subtitle">
+                    Comprehensive parking solutions designed for modern urban environments 
+                    with cutting-edge technology and unmatched convenience.
+                </p>
+                <a href="#pricing" class="services-cta">
+                    <i class="fas fa-bolt"></i>
+                    View Pricing
+                </a>
+            </div>
+            <div style="text-align: center;">
+                <i class="fas fa-car-side" style="font-size: 18rem; opacity: 0.1; animation: float 6s ease-in-out infinite;"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card car">
+                    <div class="pricing-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="pricing-title">Car Parking</h3>
+                    <div class="pricing-rate">₹50<span>/hour</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 50+ slots available</li>
+                        <li><i class="fas fa-check"></i> 24/7 CCTV security</li>
+                        <li><i class="fas fa-check"></i> Covered parking</li>
+                        <li><i class="fas fa-check"></i> SUV compatible</li>
+                    </ul>
+                    <button class="pricing-btn">Book Now</button>
+                </div>
+                <div class="pricing-card bike featured">
+                    <div class="pricing-icon">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <h3 class="pricing-title">Two-Wheeler</h3>
+                    <div class="pricing-rate">₹20<span>/hour</div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 100+ slots available</li>
+                        <li><i class="fas fa-check"></i> Dedicated area</li>
+                        <li><i class="fas fa-check"></i> Easy access ramps</li>
+                        <li><i class="fas fa-check"></i> MOST POPULAR</li>
+                    </ul>
+                    <button class="pricing-btn">Book Now</button>
+                </div>
+                <div class="pricing-card truck">
+                    <div class="pricing-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="pricing-title">Heavy Vehicles</h3>
+                    <div class="pricing-rate">₹120<span>/hour</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Large vehicle slots</li>
+                        <li><i class="fas fa-check"></i> Loading/unloading area</li>
+                        <li><i class="fas fa-check"></i> 24hr access</li>
+                        <li><i class="fas fa-check"></i> Special rates</li>
+                    </ul>
+                    <button class="pricing-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Complete Parking Solutions</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car-battery"></i>
+                    </div>
+                    <h3 class="service-title">EV Charging</h3>
+                    <p>Fast charging stations for electric vehicles with multiple connectors</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">24/7 Security</h3>
+                    <p>Advanced CCTV, biometric access, and real-time monitoring systems</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Mobile App</h3>
+                    <p>Book, track, and pay through our intuitive mobile application</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="service-title">Digital Payments</h3>
+                    <p>UPI, cards, and wallet payments with instant receipts</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="service-title">Valet Service</h3>
+                    <p>Professional valet parking for premium convenience</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="service-title">Free WiFi</h3>
+                    <p>High-speed internet access while you wait</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
